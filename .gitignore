@@ -30,3 +30,4 @@ bin/
 /.idea/
 /git_group_8.iml
 /src/Main.java
+/.gitignore
