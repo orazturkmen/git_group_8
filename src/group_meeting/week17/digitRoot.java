@@ -1,4 +1,4 @@
-package group_meeting.week18;
+package group_meeting.week17;
 
 public class digitRoot {
     public static void main(String[] args) {
