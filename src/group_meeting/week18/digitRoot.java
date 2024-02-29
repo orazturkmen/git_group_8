@@ -10,7 +10,7 @@ public class digitRoot {
 
     }
     public static int digitalRoot(int number){
-        if (number < 10)return number;
+        if (number < 10) return number;
         int sum = 0;
         while (number != 0){
             sum += number % 10;

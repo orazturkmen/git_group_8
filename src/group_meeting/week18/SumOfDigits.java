@@ -2,9 +2,9 @@ package group_meeting.week18;
 
 public class SumOfDigits {
     public static void main(String[] args) {
-        sumOfDigits(687);
-        sumOfDigits(555);
-        sumOfDigits(12);
+        System.out.println(sumOfDigits(687));
+        System.out.println(sumOfDigits(555));
+        System.out.println(sumOfDigits(12));
     }
 
     public static int sumOfDigits(int number){
@@ -13,7 +13,7 @@ public class SumOfDigits {
             sumOfDigits += number % 10;
             number /= 10;
         }
-        System.out.println(sumOfDigits);
+
         return sumOfDigits;
     }
 
