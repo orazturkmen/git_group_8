@@ -1,8 +1,8 @@
-package group_meeting.week14;
+package group_meeting.week16;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static group_meeting.week14.frequency.getFrequency;
+import static group_meeting.week16.frequency.getFrequency;
 
 public class firstNonRepeatedVowel {
     public static void main(String[] args) {
