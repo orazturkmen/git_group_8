@@ -12,6 +12,8 @@ public class PalindromeArray {
         String[] arr2 = {"def", "ab"};
         System.out.println(palindromesInArray(arr2));
 
+
+
     }
 
     public static ArrayList<String> palindromesInArray(String[] array){
