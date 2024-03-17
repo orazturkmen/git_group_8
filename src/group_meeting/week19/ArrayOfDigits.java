@@ -21,6 +21,10 @@ public class ArrayOfDigits {
         System.out.println(Arrays.toString(numToArray(365)));
 
         System.out.println(Arrays.toString(solWithStream(764)));
+
+        System.out.println(Arrays.toString(numToArray(1005)));
+
+        System.out.println(Arrays.toString(solWithStream(423)));
     }
 
     public static int[] numToArray(int n){
@@ -31,6 +35,7 @@ public class ArrayOfDigits {
         }
         return array;
     }
+
 
     public static int[] solWithStream(int n){
         return Integer.toString(n)
