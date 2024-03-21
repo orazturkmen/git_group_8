@@ -1,0 +1,48 @@
+package group_meeting.week20;
+
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+public class Anagram {
+    public static void main(String[] args) {
+        System.out.println(anagram("anagram", "nagaram"));
+        System.out.println(anagram("cat","car"));
+    }
+
+    public static boolean anagram(String s1, String s2){
+        if (s1.length() != s2.length() ){
+            throw new IllegalArgumentException("Length of strings must be equal!");
+        }
+        List<String> list1 = new ArrayList<>(Arrays.asList(s1.split("")));
+        List<String> list2 = new ArrayList<>(Arrays.asList(s2.split("")));
+
+        list1 = list1.stream().sorted().collect(Collectors.toList());
+        list2 = list2.stream().sorted().collect(Collectors.toList());
+
+        boolean b = false;
+
+        for (int i = 0, j = 0; i < list1.size(); i++, j++) {
+            b = list1.get(i).equals(list2.get(j));
+            if (!b) return b;
+        }
+        return b;
+    }
+}
+/*
+Question-1 Valid Anagram
+Given two strings s and t, return true if t is an anagram of s, and false otherwise.
+An Anagram is a word or phrase formed by rearranging the letters of a different word or phrase,
+typically using all the original letters exactly once.
+Constraints:
+ 1 <= s.length, t.length <= 5 * 104
+ s and t consist of lowercase English letters.
+Follow up: What if the inputs contain Unicode characters? How would you adapt your solution to
+such a case?
+Example 1:
+Input: s = "anagram", t = "nagaram"
+Output: true
+Example 2:
+Input: s = "rat", t = "car"
+Output: false
+ */
