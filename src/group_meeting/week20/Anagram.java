@@ -7,6 +7,9 @@ public class Anagram {
     public static void main(String[] args) {
         System.out.println(anagram("anagram", "nagaram"));
         System.out.println(anagram("cat","car"));
+
+        System.out.println(anagramSol2("anagram","nagaram"));
+        System.out.println(anagramSol2("cat","car"));
     }
 
     public static boolean anagram(String s1, String s2){
@@ -25,8 +28,22 @@ public class Anagram {
             if (!list1.get(i).equals(list2.get(i))) return false;
         }*/
 
-
         return list1.equals(list2);
+    }
+
+    public static boolean anagramSol2(String s1, String s2){
+        if (s1.length() != s2.length()) return false;
+
+        char[] chars = new char[26];
+        for (int i = 0; i < s1.length(); i++) {
+            chars[s1.charAt(i) - 'a']++;
+            chars[s2.charAt(i) - 'a']--;
+        }
+
+        for (int i = 0; i < chars.length; i++) {
+            if (chars[i] != 0) return false;
+        }
+        return true;
     }
 }
 /*
