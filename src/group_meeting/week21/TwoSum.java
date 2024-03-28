@@ -4,38 +4,37 @@ import java.util.Arrays;
 
 public class TwoSum {
     public static void main(String[] args) {
-       int[] nums = {16, 3, 11, 5, 15};
-       int target = 8;
-        /*System.out.println(Arrays.toString(nums));
-       Arrays.sort(nums);
-        System.out.println(Arrays.toString(nums));
-
-       int[] ans = new int[2];
-        for (int i = 0; i < nums.length; i++) {
-            for (int i1 = 0; i1 < nums.length; i1++) {
-                if (nums[i] + nums[i1] == target) {
-                    ans[0] = nums[i];
-                    ans[1] = nums[i1];
-                }
-            }
-        }
-
-        System.out.println(Arrays.toString(ans));*/
+        int[] nums = {16, 3, 11, 5, 15};
+        int target = 14;
 
         System.out.println(Arrays.toString(twoSum(nums, target)));
+
+        System.out.println(Arrays.toString(sol2(nums, 19)));
+        System.out.println(Arrays.toString(sol2(nums, 20)));
     }
 
-    public static int[] twoSum(int[] array, int target){
+    public static int[] twoSum(int[] array, int target) {
         int[] result = new int[2];
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                if (array[i] + array[j] == target){
-                    result[0] = array[i];
-                    result[1] = array[j];
+        for (int j : array) {
+            for (int k : array) {
+                if (j + k == target & j != k) {
+                    result[0] = j;
+                    result[1] = k;
                 }
             }
         }
         return result;
+    }
+    //3,5,11,15,16  :  20
+    public static int[] sol2(int[] array, int target){
+        Arrays.sort(array);
+        int left = 0, right = array.length - 1;
+        while (left < right){
+            if (array[left] + array[right] == target) return new int[]{array[left], array[right]};
+            else if (array[left] + array[right] > target) right--;
+            else left++;
+        }
+        return new int[0];
     }
 }
 /*

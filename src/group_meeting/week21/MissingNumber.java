@@ -1,6 +1,10 @@
 package group_meeting.week21;
 
 import java.util.Arrays;
+import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MissingNumber {
     public static void main(String[] args) {
@@ -12,6 +16,15 @@ public class MissingNumber {
 
         int[] num2 = {9,4,5,8,6,1,3,2,0};
         System.out.println("missing number: " + missingNum(num2));
+
+        System.out.println(sol2(num1));
+
+        System.out.println(sol3(num2));
+        System.out.println(sol3(num1));
+        System.out.println(sol3(ar));
+
+        System.out.println(sol3(new int[]{2, 0, 5, 7, 10, 1, 3, 4, 8, 9}));
+
     }
 
 
@@ -25,6 +38,24 @@ public class MissingNumber {
 
         for (int i = 0; i < ints.length; i++) {
             if (ints[i] == 0) n = i;
+        }
+        return n;
+    }
+
+    public static int sol2(int[] array){
+        int n = array.length;
+        int actualSum = IntStream.rangeClosed(0,n).sum();
+        int expectedSum = Arrays.stream(array).sum();
+        return actualSum - expectedSum;
+    }
+
+    public static int sol3(int[] array){
+        int n = 0;
+        Set<Integer> collect = Arrays.stream(array)
+                .boxed()
+                .collect(Collectors.toSet());
+        for (int i = 0; i < array.length+1; i++) {
+            if (!collect.contains(i)) n = i;
         }
         return n;
     }
