@@ -31,7 +31,6 @@ public class MoveZeroes {
         return arr;
     }
 
-
     public static void moveZero2(int[] nums) {
         int index = 0;
 
