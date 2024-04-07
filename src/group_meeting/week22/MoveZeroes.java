@@ -14,6 +14,7 @@ public class MoveZeroes {
         int[] a = {0,1,0,7,0,5,0};
         moveZero2(a);
         System.out.println(Arrays.toString(a));
+
     }
     public static int[] moveZero(int[] array){
         int left = 0, right = array.length-1;
@@ -29,6 +30,7 @@ public class MoveZeroes {
         }
         return arr;
     }
+
 
     public static void moveZero2(int[] nums) {
         int index = 0;
