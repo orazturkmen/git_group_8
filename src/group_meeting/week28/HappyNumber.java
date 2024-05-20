@@ -8,6 +8,8 @@ public class HappyNumber {
             System.out.println(false);
         }
 
+        HappyNumber sol = new HappyNumber();
+        System.out.println(sol.solutionWithRecursion(20));
 
     }
 
@@ -22,7 +24,25 @@ public class HappyNumber {
         return true;
     }
 
+    private int findSquareSum(int n) {
+        int squareSum = 0;
+        while (n != 0) {
+            int eachDigit = n % 10;
+            squareSum += eachDigit * eachDigit;
+            n /= 10;
+        }
+        return squareSum;
+    }
 
+    // TC : hard to guess O(log n)  SC: O(log n))
+    public boolean solutionWithRecursion(int n) {
+        // it becomes infinite loop if n = 4        4 → 16 → 37 → 58 → 89 → 145 → 42 → 20 → 4 → ...
+        if (n == 4)
+            return false;
+        if (n == 1) return true;
+        int sum = findSquareSum(n);
+        return solutionWithRecursion(sum);
+    }
 
 }
 /*
