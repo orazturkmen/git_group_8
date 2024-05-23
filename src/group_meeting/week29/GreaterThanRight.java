@@ -4,10 +4,11 @@ import java.util.*;
 
 public class GreaterThanRight {
     public static void main(String[] args) {
-
+        GreaterThanRight solution = new GreaterThanRight();
         int[] array = {10, 4, 6, 3, 5};
         System.out.println(sol1(array));
 
+        System.out.println(solution.sol2(array));
 
     }
 
@@ -40,7 +41,19 @@ public class GreaterThanRight {
         return list;
     }
 
+    List<Integer> sol2(int[] arr){
+        LinkedList<Integer> stack = new LinkedList<>();
+        for (int value : arr) {
+            while (!stack.isEmpty() && value > stack.peek()){
+                stack.pop();
+            }
+            stack.push(value);
+        }
 
+//        Collections.reverse(stack);
+        stack.sort(Collections.reverseOrder());
+        return stack;
+    }
 }
 /*
 Question-1 Find All Elements Greater Than Their Right
