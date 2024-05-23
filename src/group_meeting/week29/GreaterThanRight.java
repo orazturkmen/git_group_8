@@ -9,18 +9,21 @@ public class GreaterThanRight {
         System.out.println(sol1(array));
 
         System.out.println(solution.sol2(array));
+        System.out.println(solution.withDeque(array));
 
     }
 
 
-    static void find(int[] arr){
-        if (arr == null || arr.length == 0) return;
-
+    Deque<Integer> withDeque(int[] arr){
         Deque<Integer> stack = new LinkedList<>();
+        if (arr == null || arr.length == 0) return stack;
 
-        for (int value : arr) {
+        stack.push(arr[arr.length-1]);
 
+        for (int i = arr.length-2; i >= 0; i--) {
+            if (stack.peek() < arr[i]) stack.push(arr[i]);
         }
+        return stack;
     }
 
     public static List<Integer> sol1(int[] array){
