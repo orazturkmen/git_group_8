@@ -21,15 +21,6 @@ public class Stairs {
         System.out.println("Stairs = 6, ways: " + solution.sol2(6));
 
 
-
-
-
-//        System.out.println("****************************************************************");
-//
-//        System.out.println(solution.solFor3Steps(2));
-//        System.out.println(solution.solFor3Steps(3));
-//        System.out.println(solution.solFor3Steps(4));
-//        System.out.println(solution.solFor3Steps(5));
     }
 
     int climbStairs(int n){
@@ -77,7 +68,7 @@ Input: n = 3 Output: 3
 Explanation: There are three ways to climb to the top.
 1. 1 step + 1 step + 1 step
 2. 1 step + 2 steps
-3. 2 steps + 1 step
+3. 2 steps + 1 step.
 Constraints:
 • 1 <= n <= 45
  */
