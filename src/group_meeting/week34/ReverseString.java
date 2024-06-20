@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ReverseString {
     public static void main(String[] args) {
-        String s1 = "the sky is blue";
+        String s1 = "the  sky is blue";
         String s2 = " hello world ";
         System.out.println("Original String s1: " + s1);
         System.out.println("Original String s2: " + s2);
@@ -28,14 +28,14 @@ public class ReverseString {
     }
 
     public static String reverse(String input){
-        List<String> str = new ArrayList<>(List.of(input.split(" ")));
+        List<String> str = new ArrayList<>(List.of(input.split(" +")));  //.split(" +") to avoid extra whitespaces
         Collections.reverse(str);
         return String.join(" ", str).trim();
     }
 
     public static String reverse2(String input){
         StringBuilder sb = new StringBuilder();
-        String[] array = input.split(" ");
+        String[] array = input.split(" +");
         for (int i = array.length-1; i >= 0; i--) {
             sb.append(array[i]).append(" ");
         }
